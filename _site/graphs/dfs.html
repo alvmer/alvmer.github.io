@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!--    -->
 
   <meta charset="utf-8">
@@ -21,11 +20,11 @@
   <title>Теория графов | Алексей Мерзляков</title>
 
   <meta name="description" content="Глубоко изучаем обход в глубину. Формулируем и доказываем связанные алгоритмы.">
-  <meta name="twitter:card" content="summary">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:4000/graphs/dfs.html">
-  <meta property="og:title" content="Теория графов | Алексей Мерзляков">
-  <meta property="og:description" content="Глубоко изучаем обход в глубину. Формулируем и доказываем связанные алгоритмы.">
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://localhost:4000/graphs/dfs.html" />
+  <meta property="og:title" content="Теория графов | Алексей Мерзляков" />
+  <meta property="og:description" content="Глубоко изучаем обход в глубину. Формулируем и доказываем связанные алгоритмы." />
 <!--   <meta property="og:image" content="https://www.markdownguide.org/assets/images/markdown-guide-og.jpg" /> -->
 
   <meta name="HandheldFriendly" content="True">
@@ -54,6 +53,18 @@
 
   <script src="https://kit.fontawesome.com/25675da278.js" crossorigin="anonymous"></script>
 
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(','\\)']]
+    }
+  };
+</script>
+
   <script>
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
@@ -66,7 +77,6 @@
       font-size:  19px !important;
     }
   </style>
-<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
   <body data-spy="scroll" data-target="#toc">
@@ -119,8 +129,7 @@
 <div class="card pseudo">
     <div class="card-header"> <p>procedure dfs($v$: vertex)</p>
 </div>
-    <div class="card-body">
-<p>color[$v$] = $\texttt{Grey}$
+    <div class="card-body"><p>color[$v$] = $\texttt{Grey}$
 for $\forall w: (v, w)\in E$:
     if color[$w$] == $\texttt{White}$
         dfs($w$)
@@ -148,19 +157,19 @@ color[$v$] = $\texttt{Black}$</p>
 <p>Для строгого доказательства корректности алгоритма а также для более ясного понимания принципа его работы необходимо рассмотреть следующую важнейшую лемму.</p>
 
 <div class="alert alert-lemma">
-  <img class="alert-icon" src="/assets/images/icons/flask.png" alt="icon"><div class="alert-name">Лемма (О белом пути)</div>
+  <img class="alert-icon" src="/assets/images/icons/flask.png" alt="icon" /><div class="alert-name">Лемма (О белом пути)</div>
 
   Пусть в некоторый момент произошел вызов $\texttt{dfs($v$)}$ (это не обязательно самый первый вызов $\texttt{dfs($s$)}$). Тогда множества тех вершин, обработка которых произойдет в процессе $\texttt{dfs($v$)}$ и множество тех вершин, до которых есть путь из $v$ только по белым вершинам, совпадают. 
 Иными словами $\{ w \,|\, \texttt{dfs($w$)} \text{ happens during } \texttt{dfs($v$)} \} = \{ w \,|\, \exists\, \text{white-path from $v$ to $w$} \}$.
 
    <a name="whitepath"></a> 
-  <br>
+  <br />
   
     <button class="btn" type="button" data-toggle="collapse" data-target="#collapseProofwhitepath" aria-expanded="false" aria-controls="collapseProofwhitepath">Доказательство
   </button>
   <div class="collapse" id="collapseProofwhitepath">
     <div class="qed">
-    <hr>
+    <hr />
       <p>Рассмотрим произвольную белую вершину $w$. В одну сторону доказательство очевидно. Если белого пути из $v$ в $w$ не существует, то дойти до вершины $w$ просто не возможно, это следует из кода (алгоритм ходит только по белым вершинам).</p>
 
     </div>

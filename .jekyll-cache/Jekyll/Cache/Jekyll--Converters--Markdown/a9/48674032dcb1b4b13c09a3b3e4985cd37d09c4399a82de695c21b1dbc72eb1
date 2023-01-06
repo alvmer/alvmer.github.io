@@ -1,120 +1,4 @@
- <!DOCTYPE html>
-<html lang="ru">
-  <head>
-<!--    -->
-
-  <meta charset="utf-8">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicons/site.webmanifest">
-  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#52796f">
-  <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#00aba9">
-  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#52796F">
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Временная сложность | Алексей Мерзляков</title>
-
-  <meta name="description" content="">
-  <meta name="twitter:card" content="summary" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://localhost:4000/complexity/amortized.html" />
-  <meta property="og:title" content="Временная сложность | Алексей Мерзляков" />
-  <meta property="og:description" content="" />
-<!--   <meta property="og:image" content="https://www.markdownguide.org/assets/images/markdown-guide-og.jpg" /> -->
-
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-
-  <link rel="stylesheet" type="text/css" href="/assets/css/font_faces.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
-
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/bootstrap-toc.min.css">
-  <link rel="stylesheet" href="/assets/css/docsearch.min.css">
-
-
-  
-  <link href="/assets/css/page.css" rel="stylesheet">
-  
-
-  <link rel="canonical" href="http://localhost:4000/complexity/amortized.html">
-
-  <script src="/assets/javascript/jquery-3.5.1.slim.min.js"></script>
-  <script async src="/assets/javascript/bootstrap.bundle.min.js"></script>
-  <script async src="/assets/javascript/bootstrap-toc.min.js"></script>
-  <script defer src="/assets/javascript/solid.min.js"></script>
-  <!-- <script defer src="/assets/javascript/fontawesome.min.js"></script> -->
-  <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
-
-  <script src="https://kit.fontawesome.com/25675da278.js" crossorigin="anonymous"></script>
-
-  <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(','\\)']]
-    }
-  };
-</script>
-
-  <script>
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    });
-  </script>
-
-  <style>
-    .MathJax, .MathJax_Display  {
-      /*text-align: center !important;*/
-      font-size:  19px !important;
-    }
-  </style>
-</head>
-
-  <body data-spy="scroll" data-target="#toc">
-    <nav class="navbar navbar-expand-lg navbar-dark mdg-nav">
-  <div class="container">
-    <a class="navbar-brand" href="/" style="margin-top: 0px; margin-bottom: 0px">
-      <img src="/assets/images/amlogo-white.svg" height="37" width="37" class="d-inline-block align-top" alt="Alexey Merzlyakov" style="padding-right: 5px">
-      Временная сложность | Алексей Мерзляков 
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-top: 2px">
-      
-      <!-- навигация для временной сложности -->
-      <div class="navbar-nav">
-        <a class="nav-item nav-link " href="/complexity/o-notation.html">Временная сложность</a>
-        <a class="nav-item nav-link active" href="/complexity/amortized.html">Амортизационный анализ</a>
-      </div>
-      
-    </div>
-   <!--  <form class="form-inline d-none d-lg-inline-block mt-2 mt-md-0">
-      <input type="text" class="form-control" id="search-input" placeholder="Search" style="margin-top:0">
-    </form> -->
-  </div>
-</nav>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="no-anchor" data-toc-skip>Амортизационный анализ</h1>
-        <p></p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-xs-12 col-sm-12 col-md-9">
-          <h2 id="введение">Введение</h2>
+I"Cy<h2 id="введение">Введение</h2>
 
 <p>Нередко при работе со структурами данных мы сталкиваемся с частыми последовательными вызовами операций. Можно проследить, что фактическая временная сложность операции зависит от текущего состояния структуры данных, то есть вызовы в разные моменты времени даже одной и той же операции могут сильно отличаться по времени. Говорить о временной сложности в худшем случае при этом может быть  очень грустно: оценка может получиться слишком грубой в том смысле, что реально такая сложность достигается не так часто.</p>
 
@@ -285,11 +169,11 @@ $$
 
 \[c'_i = c_i + \varphi(S_i) - \varphi(S_{i-1}) = c_i + 2\times\texttt{size}_i - \texttt{capacity}_i - 2\times\texttt{size}_{i-1} + \texttt{capacity}_{i-1}.\]
 
-<p>Здесь тоже приходится разбирать два случая. Предположим, что реаллокация не потребовалась. В таком случае $c_i=1$, так как мы просто заносим новый элемент в ячейку памяти,  $\texttt{size}_i = \texttt{size}_{i-1} + 1$, при этом $\texttt{capacity}_i=\texttt{capacity}_{i-1}$, так как эта характеристика без реаллокаций принципиально не меняется. Подставляя все это выше, получим</p>
+<p>Здесь тоже приходится разбирать два случая. Предположим, что реаллокация не потребовалась. В таком случае $c_i=1$, так как мы просто заносим новый элемент в ячейку памяти, $\texttt{size}<em>i = \texttt{size}</em>{i-1} + 1$, при этом $\texttt{capacity}<em>i=\texttt{capacity}</em>{i-1}$, так как эта характеристика без реаллокаций принципиально не меняется. Подставляя все это выше, получим</p>
 
 \[c'_i = 1 + 2\times(\texttt{size}_{i-1} + 1) - \texttt{capacity}_{i-1} - 2\times\texttt{size}_{i-1} + \texttt{capacity}_{i-1} = 3.\]
 
-<p>Теперь рассмотрим случай, когда реаллокация была сделана. Для простоты обозначений положим, что $\texttt{size}_{i-1} = \texttt{capacity}_{i-1} = k$. Тогда $c_i = k + 1$, так как нам необходимо сначала скопировать $k$ элементов вектора, а затем приписать туда новый. Далее $\texttt{size}_i = k + 1$, а $\texttt{capacity}_i=2k$. Получаем</p>
+<p>Теперь рассмотрим случай, когда реаллокация была сделана. Для простоты обозначений положим, что $\texttt{size}<em>{i-1} = \texttt{capacity}</em>{i-1} = k$. Тогда $c_i = k + 1$, так как нам необходимо сначала скопировать $k$ элементов вектора, а затем приписать туда новый. Далее $\texttt{size}_i = k + 1$, а $\texttt{capacity}_i=2k$. Получаем</p>
 
 \[c'_i = k + 1 + 2(k + 1) - 2k - 2k + k = 3.\]
 
@@ -308,7 +192,7 @@ $$
         <button class="btn" type="button" data-toggle="collapse" data-target="#collapseSolutionamort1" aria-expanded="false" aria-controls="collapseSolutionamort1">Решение
         </button>
         <div class="collapse" id="collapseSolutionamort1">
-          <p>Да, такая формула будет работать. Сделаем те же подстановки для случая без реаллокации $\varphi(S) = 1 + 3(\texttt{size}_{i-1}+1) - \texttt{capacity}_{i-1} - 3\cdot \texttt{size}_{i-1} + \texttt{capacity}_{i-1}=4=\mathcal{O}(1)$. Для случая с реаллокацией используем те же обозначения: $\varphi(S)=k + 1 + 3(k+1) - 2k - 3k + k=4=\mathcal{O}(1)$. Нетрудно догадаться, что для расширения вектора в 2 раза будет годиться любая формула вида $\varphi(S)=\lambda\texttt{size} - \texttt{capacity},\,\lambda\geqslant2$.</p>
+          <p>Да, такая формула будет работать. Сделаем те же подстановки для случая без реаллокации $\varphi(S) = 1 + 3(\texttt{size}<em>{i-1}+1) - \texttt{capacity}</em>{i-1} - 3\cdot \texttt{size}<em>{i-1} + \texttt{capacity}</em>{i-1}=4=\mathcal{O}(1)$. Для случая с реаллокацией используем те же обозначения: $\varphi(S)=k + 1 + 3(k+1) - 2k - 3k + k=4=\mathcal{O}(1)$. Нетрудно догадаться, что для расширения вектора в 2 раза будет годиться любая формула вида $\varphi(S)=\lambda\texttt{size} - \texttt{capacity},\,\lambda\geqslant2$.</p>
 
         </div>
     
@@ -327,40 +211,4 @@ $$
   
 </div>
 
-
-        </div>
-        <div class="col-md-3 d-none d-md-block" id="sidebar">
-          <nav id="toc" data-toggle="toc" class="sticky-top" style="z-index:1"></nav>
-          
-        </div>
-      </div>
-    </div>
-    <footer class="site-footer">
-  <div class="container">
-    <!-- <p style="font-size: 14px; font-weight: 600"><a href="/about/">About</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://github.com/mattcone/markdown-guide">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/api/v1/">API</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/privacy-policy/">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/terms-and-conditions/">Terms and Conditions</a></p>
-    <p style="margin-top: 15px; font-size: 14px;">&#169; 2023. A <a href="https://www.mattcone.com">Alexey Merzlyakov</a> project. <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Made with 🌶️ in <a href="https://www.newmexico.org/">New Mexico</a>.</p> -->
-  </div>
-</footer>
-<script type="text/javascript" src="/assets/javascript/anchor.min.js"></script>
-<script>
-  anchors.options = {
-  placement: 'right',
-  };
-  anchors.add('h1, h2, h3, h4, h5').remove('.no-anchor');
-</script>
-
-<!-- for search -->
-<script src="/assets/javascript/docsearch.min.js"></script>
-<script>
-docsearch({
-container: '#docsearch',
-appId: 'G2ZRR9A979',
-apiKey: 'f522befe6142f2279344e025a79539a7',
-indexName: 'markdownguide',
-inputSelector: '#search-input',
-debug: false // Set debug to true if you want to inspect the dropdown
-});
-</script>
-
-  </body>
-</html>
+:ET

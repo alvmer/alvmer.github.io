@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!--    -->
 
   <meta charset="utf-8">
@@ -21,11 +20,11 @@
   <title>Временная сложность | Алексей Мерзляков</title>
 
   <meta name="description" content="">
-  <meta name="twitter:card" content="summary">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:4000/complexity/o-notation.html">
-  <meta property="og:title" content="Временная сложность | Алексей Мерзляков">
-  <meta property="og:description" content="">
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://localhost:4000/complexity/o-notation.html" />
+  <meta property="og:title" content="Временная сложность | Алексей Мерзляков" />
+  <meta property="og:description" content="" />
 <!--   <meta property="og:image" content="https://www.markdownguide.org/assets/images/markdown-guide-og.jpg" /> -->
 
   <meta name="HandheldFriendly" content="True">
@@ -54,6 +53,18 @@
 
   <script src="https://kit.fontawesome.com/25675da278.js" crossorigin="anonymous"></script>
 
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(','\\)']]
+    }
+  };
+</script>
+
   <script>
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
@@ -66,7 +77,6 @@
       font-size:  19px !important;
     }
   </style>
-<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
   <body data-spy="scroll" data-target="#toc">
@@ -114,15 +124,15 @@
 
 <div class="question">Как вы думаете, почему нельзя назвать астрономическое время работы алгоритма универсальной характеристикой, говорящей о его эффективности?</div>
 
-<p>Рассмотрим некоторый алгоритм $\mathcal{A}$. Алгоритм всегда формулируется на языке исполнителя, то есть всегда ориентирован на конкретного исполнителя. Существуют разные теоретические исполнители: <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0_%D0%A2%D1%8C%D1%8E%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">машина Тьюринга</a>, <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC">алгоритмы Маркова</a>, <a href="https://ru.wikipedia.org/wiki/RAM-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0">RAM-машина</a>. В каждой из этих моделей подробно описывается, из чего она состоит и как происходит выполнение алгоритма, а также описывается набор так называемых <strong>элементарных действий</strong>, которые может совершать этот исполнитель (сдвинуть головку вправо, сделать запись, сделать замену подстроки, записать в определенный регистр и т.д.). Большинство студентов представляют себе алгоритм как код на языке Python или С++, что в принципе, совершенно естественно. Элементарными тогда называют, как правило, очень простые атомарные действия: присваивание, арифметические операции, сравнения, обращение по индексу к элементу массива и др. Нужно понимать, что это некоторая вольность, которая снижает степень математической строгости, но так делать можно. (На самом деле, в случае, например, С++, код всегда переводится в процессе компиляции в язык ассемблера, система команд которого очень похожа на  элементарные команды RAM-машины. То есть с некоторой точностью можно установить соответствие  между простыми командами С++, которые мы назвали элементарными, и элементарными действиями настоящей математической модели вычислений.) Сформулируем теперь важнейшее определение.</p>
+<p>Рассмотрим некоторый алгоритм $\mathcal{A}$. Алгоритм всегда формулируется на языке исполнителя, то есть всегда ориентирован на конкретного исполнителя. Существуют разные теоретические исполнители: <a href="https://ru.wikipedia.org/wiki/Машина_Тьюринга">машина Тьюринга</a>, <a href="https://ru.wikipedia.org/wiki/Нормальный_алгоритм">алгоритмы Маркова</a>, <a href="https://ru.wikipedia.org/wiki/RAM-машина">RAM-машина</a>. В каждой из этих моделей подробно описывается, из чего она состоит и как происходит выполнение алгоритма, а также описывается набор так называемых <strong>элементарных действий</strong>, которые может совершать этот исполнитель (сдвинуть головку вправо, сделать запись, сделать замену подстроки, записать в определенный регистр и т.д.). Большинство студентов представляют себе алгоритм как код на языке Python или С++, что в принципе, совершенно естественно. Элементарными тогда называют, как правило, очень простые атомарные действия: присваивание, арифметические операции, сравнения, обращение по индексу к элементу массива и др. Нужно понимать, что это некоторая вольность, которая снижает степень математической строгости, но так делать можно. (На самом деле, в случае, например, С++, код всегда переводится в процессе компиляции в язык ассемблера, система команд которого очень похожа на  элементарные команды RAM-машины. То есть с некоторой точностью можно установить соответствие  между простыми командами С++, которые мы назвали элементарными, и элементарными действиями настоящей математической модели вычислений.) Сформулируем теперь важнейшее определение.</p>
 
 <div class="alert alert-definition">
-  <img class="alert-icon" src="/assets/images/icons/study.png" alt="icon"><div class="alert-name">Определение</div>
+  <img class="alert-icon" src="/assets/images/icons/study.png" alt="icon" /><div class="alert-name">Определение</div>
 
   <em>Временной сложностью</em> алгоритма $\mathcal{A}$ назовем функцию $T^{\mathcal{A}}\colon \texttt{Inputs}\to \mathbb{N}$, которая каждым входным данным алгоритма сопоставляет количество элементарных действий, которые алгоритм сделает в процессе преобразования этих входных данных в результат.
 
    <a name="complexity"></a> 
-  <br>
+  <br />
   
 </div>
 
@@ -138,7 +148,7 @@
 <p>Тогда мы можем составить более простые функции.</p>
 
 <div class="alert alert-definition">
-  <img class="alert-icon" src="/assets/images/icons/study.png" alt="icon"><div class="alert-name">Определение</div>
+  <img class="alert-icon" src="/assets/images/icons/study.png" alt="icon" /><div class="alert-name">Определение</div>
   <em>Сложностью в худшем случае</em> алгоритма $\mathcal{A}$ назовем функцию 
   $$f(n)=\max_{\texttt{input}\in\texttt{Inputs}_{\texttt{len}=n}}{T^{\mathcal{A}}(\texttt{input})}.$$
 </div>

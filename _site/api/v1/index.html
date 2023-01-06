@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!--    -->
 
   <meta charset="utf-8">
@@ -21,11 +20,11 @@
   <title></title>
 
   <meta name="description" content="Programmatically access Markdown documentation.">
-  <meta name="twitter:card" content="summary">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:4000/api/v1/">
-  <meta property="og:title" content="">
-  <meta property="og:description" content="Programmatically access Markdown documentation.">
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://localhost:4000/api/v1/" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="Programmatically access Markdown documentation." />
 <!--   <meta property="og:image" content="https://www.markdownguide.org/assets/images/markdown-guide-og.jpg" /> -->
 
   <meta name="HandheldFriendly" content="True">
@@ -53,6 +52,18 @@
   <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
 
   <script src="https://kit.fontawesome.com/25675da278.js" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(','\\)']]
+    }
+  };
+</script>
 
   <script>
     $(function () {
@@ -82,7 +93,7 @@
       
       <div class="navbar-nav">
         <!-- <a class="nav-item nav-link " href="/cv/">CV</a> -->
-        <a class="nav-item nav-link " href="/index/#courses">Курсы</a>
+        <a class="nav-item nav-link " href="#courses">Курсы</a>
        <!--  <a class="nav-item nav-link " href="/blog/">Блог</a>
         <a class="nav-item nav-link " href="/talks/">Выступления</a>
         <a class="nav-item nav-link " href="/books/">Книги</a> -->
