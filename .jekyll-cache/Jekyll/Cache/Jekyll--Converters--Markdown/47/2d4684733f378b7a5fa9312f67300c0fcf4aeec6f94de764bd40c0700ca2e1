@@ -1,0 +1,6 @@
+I"—<p>color[$v$] = $\texttt{Grey}$
+for $\forall w: (v, w)\in E$:
+    if color[$w$] == $\texttt{White}$
+        dfs($w$)
+color[$v$] = $\texttt{Black}$</p>
+:ET

@@ -1,0 +1,71 @@
+I"c<h2 id="introduction">Introduction</h2>
+
+<p>The Markdown Guide API provides a subset of documentation from the <em>Markdown Guide</em> in JSON format. We hope that software developers and organizations use this API to programmatically consume our documentation and display it in applications and on websites.</p>
+
+<h3 id="why">Why?</h3>
+
+<p>Why create an API for Markdown documentation? Because there’s so much duplicated Markdown documentation on the web! It seems like everybody has their own version of Markdown documentation for their application or website. That’s a shame since most of it is exactly the same.</p>
+
+<p>Then came the epiphany. 💡 We realized we could create a JSON API using documentation from the <em>Markdown Guide</em>. That way, software developers could start using the API to include our documentation in their applications, and organizations like universities and libraries could use the API to include our documentation on their websites.</p>
+
+<p>We’d love to see the <em>Markdown Guide</em> become the central documentation repository for the thousands of Markdown instructions sprinkled around the internet. Will it work? Who knows! One thing’s for sure though: We can’t wait to see what you do with it. 🤘</p>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>The Markdown Guide API is designed to provide only essential Markdown documentation. As a result, the API doesn’t include all of the documentation available on the <em>Markdown Guide</em> website. For example, the <a href="/basic-syntax/#adding-elements-in-lists">Adding Elements in Lists</a> section is not available through the basic syntax endpoint.</p>
+
+<h2 id="basic-syntax-endpoint">Basic Syntax Endpoint</h2>
+
+<p>The basic syntax endpoint contains documentation about the Markdown elements outlined in John Gruber’s design document and described on the <a href="/basic-syntax/">Basic Syntax page</a>.</p>
+
+<div class="card">
+  <h6 class="card-header no-anchor" data-toc-skip="">API Endpoint</h6>
+  <div class="card-body"><a href="/api/v1/basic-syntax.json">/api/v1/basic-syntax.json</a></div>
+</div>
+
+<h3 id="request">Request</h3>
+
+<p><code class="language-plaintext highlighter-rouge">curl https://www.markdownguide.org/api/v1/basic-syntax.json</code></p>
+
+<h3 id="response">Response</h3>
+
+<script src="https://gist.github.com/mattcone/a0103c47bdac8bf81a54b29f650e5cb2.js"></script>
+
+<h2 id="cheat-sheet-endpoint">Cheat Sheet Endpoint</h2>
+
+<p>The cheat sheet endpoint provides an overview of the most popular basic and extended Markdown syntax elements, as described on the <a href="/cheat-sheet/">Cheat Sheet page</a>.</p>
+
+<div class="card">
+  <h6 class="card-header no-anchor" data-toc-skip="">API Endpoint</h6>
+  <div class="card-body"><a href="/api/v1/cheat-sheet.json">/api/v1/cheat-sheet.json</a></div>
+</div>
+
+<h3 id="request-1">Request</h3>
+
+<p><code class="language-plaintext highlighter-rouge">curl https://www.markdownguide.org/api/v1/cheat-sheet.json</code></p>
+
+<h3 id="response-1">Response</h3>
+
+<script src="https://gist.github.com/mattcone/ec8057127a0ff2e0b45d2cde14355b2a.js"></script>
+
+<h2 id="changelog">Changelog</h2>
+
+<p>Here’s a list of all the changes we’ve made to the Markdown Guide API.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018-10-18
+- Updated cheat sheet endpoint to include information about definition lists
+
+2018-07-12
+- Updated links description to include information about adding titles
+
+2017-11-10
+- Added cheat sheet endpoint
+
+2017-11-04
+- Added section about escaping backticks in code
+
+2017-10-24
+- Released API v1
+- Published docs
+</code></pre></div></div>
+:ET

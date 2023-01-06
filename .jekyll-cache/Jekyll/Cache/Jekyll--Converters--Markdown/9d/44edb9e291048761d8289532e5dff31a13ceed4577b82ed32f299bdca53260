@@ -1,0 +1,2 @@
+I"D<p>Проверьте, сойдется ли амортизационный анализ для той же цепочки <code class="language-plaintext highlighter-rouge">push_back</code>, если использовать функцию потенциала $\varphi(S) = 3\times \texttt{size} - \texttt{capacity}$.</p>
+:ET

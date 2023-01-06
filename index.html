@@ -1,0 +1,57 @@
+---
+title: Home
+---
+<!DOCTYPE html>
+<html lang="ru">
+  {% include head.html %}
+  <body>
+    {% include nav.html %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <img src="/assets/images/amlogo-white.svg" width="200pt" alt="AM logo">
+        <p><i>Сайт Алексея Мерзлякова</i></p>
+        <p><a class="btn btn-outline-inverse btn-lg" href="#courses" role="button">Вперед к курсам!</a></p>
+      </div>
+    </div>
+    {% if jekyll.environment == "production" %}<center><div class="horizontal" data-ea-publisher="amerzlyakov" data-ea-type="image"></div></center>{% endif %}
+    <div class="container">
+      <div class="md-guide-feature">
+        <a name="courses"></a>
+        <h2 class="no-anchor">Теоретические материалы </h2>
+        <p class="lead" style="margin-bottom: 60px">Пока в стадии активной разработки...</p>
+        <div class="row">
+          
+          <!-- <div class="col-sm-4">
+              <a href="/graphs/math-introduction.html" class="icon">
+                  <img class="icon" src="/assets/images/course-icon/graphs-icon.png" alt="Graphs Icon">
+                  
+              </a>
+            <h4 class="no-anchor">Алгоритмы на графах</h4>
+            <p>Повысь свой уровень в рамках курса <a href="/graphs/math-introduction.html">Алгоритмы на графах</a>. Множество определений, задач и классических алгоритмов на изящном математическом языке.</p>
+          </div> -->
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">
+              <a href="/complexity/o-notation.html" class="icon">
+                  <img class="icon" src="/assets/images/course-icon/complexity-icon.png" alt="Complexity Icon">  
+              </a>
+            <h4 class="no-anchor">Временная сложность</h4>
+            <p>Прокачай фундаментальное понимание всех  записей вида $\mathcal{O}(n)$ в разделе <a href="/complexity/o-notation.html">Временная сложность</a>. Перейди на новый уровень, погрузившись в амортизационный анализ.</p>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </div>
+    </div>
+    <!-- <hr> -->
+    <!-- <div class="container">
+      <div class="md-guide-feature">
+        <h2 class="no-anchor">Будь в курсе событий</h2>
+        <p class="lead">Подпишись, чтобы первым узнавать о значимых публикациях и обновлениях. (Не работает!)</p>
+        <br/>
+        <a class="btn btn-default btn-lg" href="https://mailchi.mp/83d1d4363848/signup" style="margin-top: -10px">Подписаться</a>
+      </div>
+    </div> -->
+    {% include footer.html %}
+  </body>
+</html>

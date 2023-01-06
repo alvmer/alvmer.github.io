@@ -1,0 +1,49 @@
+<div class="alert alert-task">
+  <img class="alert-icon" src="/assets/images/icons/to-do-list.png" alt="icon"><div class="alert-name">Задачи для тренировки</div>
+  {% if include.label %} <a name={{ include.label | prepend: '"' | append: '"' }}></a> {% endif %}
+
+  {% if include.task1 %}
+    {% if include.tip1 %}
+      <div data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title={{ include.tip1  | append: '"' | prepend: '"' }} class="question-icon">?</div>{{ include.task1 | markdownify }}
+    {% else %}
+      <div class="question-icon">?</div>{{ include.task1 | markdownify }}
+    {% endif %}
+    {% if include.solution1 %}
+        <button class="btn" type="button" data-toggle="collapse" data-target={{ include.label1 | append: '"' | prepend: '"#collapseSolution' }} aria-expanded="false" aria-controls={{ include.label1 | append: '"' | prepend: '"collapseSolution' }}>Решение
+        </button>
+        <div class="collapse" id={{ include.label1 | append: '"' | prepend: '"collapseSolution' }}>
+          {{ include.solution1 | markdownify  }}
+        </div>
+    {% endif %}
+  {% endif %}
+  {% if include.task2 %}
+    <br>
+    {% if include.tip2 %}
+      <div data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title={{ include.tip2  | append: '"' | prepend: '"' }} class="question-icon">?</div>{{ include.task2 | markdownify }}
+    {% else %}
+      <div class="question-icon">?</div>{{ include.task2 | markdownify }}
+    {% endif %}
+    {% if include.solution2 %}
+        <button class="btn" type="button" data-toggle="collapse" data-target={{ include.label2 | append: '"' | prepend: '"#collapseSolution' }} aria-expanded="false" aria-controls={{ include.label2 | append: '"' | prepend: '"collapseSolution' }}>Решение
+        </button>
+        <div class="collapse" id={{ include.label2 | append: '"' | prepend: '"collapseSolution' }}>
+          {{ include.solution2 | markdownify  }}
+        </div>
+    {% endif %}
+  {% endif %}
+  {% if include.task3 %}
+    <br>
+    {% if include.tip3 %}
+      <div data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title={{ include.tip3  | append: '"' | prepend: '"' }} class="question-icon">?</div>{{ include.task3 | markdownify }}
+    {% else %}
+      <div class="question-icon">?</div>{{ include.task3 | markdownify }}
+    {% endif %}
+    {% if include.solution1 %}
+        <button class="btn" type="button" data-toggle="collapse" data-target={{ include.label3 | append: '"' | prepend: '"#collapseSolution' }} aria-expanded="false" aria-controls={{ include.label3 | append: '"' | prepend: '"collapseSolution' }}>Решение
+        </button>
+        <div class="collapse" id={{ include.label3 | append: '"' | prepend: '"collapseSolution' }}>
+          {{ include.solution3 | markdownify  }}
+        </div>
+    {% endif %}
+  {% endif %}
+</div>

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark mdg-nav">
+  <div class="container">
+    <a class="navbar-brand" href="/" style="margin-top: 0px; margin-bottom: 0px">
+      <img src="/assets/images/amlogo-white.svg" height="37" width="37" class="d-inline-block align-top" alt="Alexey Merzlyakov" style="padding-right: 5px">
+      {% if page.title == 'Home' %}Алексей Мерзляков {% elsif page.url contains 'graphs' %}Теория графов | Алексей Мерзляков {% elsif page.url contains 'complexity' %}Временная сложность | Алексей Мерзляков {% else %}  ? | Алексей Мерзляков {% endif %}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-top: 2px">
+      {% if page.url contains 'graphs' %}
+      <!-- навигация для графов -->
+      <div class="navbar-nav">
+        <a class="nav-item nav-link {% if page.title == 'Введение в теорию графов' %}active{% endif %}" href="/graphs/math-introduction.html">Введение</a>
+        <a class="nav-item nav-link {% if page.title == 'Обход в глубину' %}active{% endif %}" href="/graphs/dfs.html">DFS</a>
+        <a class="nav-item nav-link {% if page.title == 'Обход в ширину' %}active{% endif %}" href="/graphs/bfs.html">BFS</a>
+        <a class="nav-item nav-link {% if page.title == 'Пути в графах' %}active{% endif %}" href="/graphs/paths.html">Пути</a>
+        <a class="nav-item nav-link {% if page.title == 'Сложные алгоритмы и СД на графах' %}active{% endif %}" href="/graphs/hard.html">Сложное</a>
+        <a class="nav-item nav-link {% if page.title == 'Потоки' %}active{% endif %}" href="/graphs/flows.html">Потоки</a>
+      </div>
+      {% elsif page.url contains 'complexity' %}
+      <!-- навигация для временной сложности -->
+      <div class="navbar-nav">
+        <a class="nav-item nav-link {% if page.title == 'Временная сложность' %}active{% endif %}" href="/complexity/o-notation.html">Временная сложность</a>
+        <a class="nav-item nav-link {% if page.title == 'Амортизационный анализ' %}active{% endif %}" href="/complexity/amortized.html">Амортизационный анализ</a>
+      </div>
+      {% else %}
+      <div class="navbar-nav">
+        <!-- <a class="nav-item nav-link {% if page.title == 'CV' %}active{% endif %}" href="/cv/">CV</a> -->
+        <a class="nav-item nav-link {% if page.title == 'Курсы' %}active{% endif %}" href="/index/#courses">Курсы</a>
+       <!--  <a class="nav-item nav-link {% if page.title == 'Блог' %}active{% endif %}" href="/blog/">Блог</a>
+        <a class="nav-item nav-link {% if page.title == 'Выступления' %}active{% endif %}" href="/talks/">Выступления</a>
+        <a class="nav-item nav-link {% if page.title == 'Книги' %}active{% endif %}" href="/books/">Книги</a> -->
+      </div>
+      {% endif %}
+    </div>
+   <!--  <form class="form-inline d-none d-lg-inline-block mt-2 mt-md-0">
+      <input type="text" class="form-control" id="search-input" placeholder="Search" style="margin-top:0">
+    </form> -->
+  </div>
+</nav>

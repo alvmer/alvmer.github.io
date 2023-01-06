@@ -1,0 +1,552 @@
+@import url("font_faces.css");
+/*@import url("search.css");
+@import url("syntax.css");*/
+
+body {
+  font-family: 'Bitter', serif;
+  font-size: 17px;
+  quotes: "«" "»" "‹" "›";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+.mdg-nav {
+  font-size: .9rem;
+  background-color: #2F3E46;
+}
+
+.jumbotron h1 {
+  font-weight: 300;
+  font-size: 3.2rem;
+  margin-top: -45px;
+}
+
+.jumbotron p {
+  padding: 5px 0 0 0;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+@media(max-width: 576px) {
+  .jumbotron p {
+    padding: 5px 0 0 0;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  .jumbotron h1 {
+    font-size: 1.5rem;
+    margin-top: 0px;
+  }
+}
+
+.jumbotron {
+  background: #84A98C;
+  color: #FFF;
+  margin-bottom: 20px;
+  border-radius: 0;
+  height: 195px;
+}
+
+.page-header {
+  font-weight: 600;
+}
+
+.list-group {
+  padding: 45px 0;
+}
+
+.page-header .anchorjs-link {
+  text-decoration: none
+}
+
+h2 .anchorjs-link {
+  text-decoration: none
+}
+
+h3 .anchorjs-link {
+  text-decoration: none
+}
+
+h4 .anchorjs-link {
+  text-decoration: none
+}
+
+.site-footer {
+  padding-top: 35px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  color: #99979c;
+  background-color: #2F3E46;
+}
+
+.about {
+  padding-top: 45px;
+  font-size: 21px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.panel-default {
+  margin-top: 50px;
+}
+
+/* css for the sidebar */
+/* https://afeld.github.io/bootstrap-toc/ */
+
+nav[data-toggle='toc'] {
+  padding-top: 28px;
+}
+
+nav[data-toggle='toc'] .nav > li > a:hover,
+nav[data-toggle='toc'] .nav-link.active,
+nav[data-toggle='toc'] .nav-link.active:focus,
+nav[data-toggle='toc'] .nav-link.active:hover,
+nav[data-toggle='toc'] .nav > li > a:focus {
+  color: #84a98c;
+  border-left: 1px solid #84a98c;
+}
+nav[data-toggle='toc'] .nav > .active > a,
+nav[data-toggle='toc'] .nav > .active:hover > a,
+nav[data-toggle='toc'] .nav > .active:focus > a {
+  color: #84a98c;
+  border-left: 2px solid #84a98c;
+}
+
+/* small screens */
+@media (max-width: 768px) {
+   /*override the Affix plugin so that the navigation isn't stick*/y 
+  nav.affix[data-toggle='toc'] {
+    position: static;
+  }
+}
+
+.footnotes {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(238, 238, 238);
+}
+
+.highlight {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+  margin-bottom: 20px;
+}
+
+.form-control-lg {
+  display: block;
+  width: 100%;
+  padding: .5rem 1rem;
+  font-size: 1.1rem;
+  height: 2.5rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .3rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+textarea {
+  height: 250px;
+}
+
+blockquote {
+  background: #FFF;
+  border-left: 10px solid #84A98C;
+  margin: 1.5em 10px;
+  padding: 1em 10px 0.1em 10px;
+  font-style: italic;
+}
+
+blockquote strong, blockquote em {
+  color: #84A98C;
+}
+
+.question {
+  font-style: italic;
+  font-size: 16px;
+  margin: -5px 0rem 10px 1.5rem;
+  color: #AC9539;
+}
+
+.question::before {
+  content: "?";
+  display: inline-block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-style: normal;
+  background-color: #CBB24D;
+  color: #FFF;
+  text-align: center;
+  margin-right: 1ex;
+  margin-top: 2px;
+}
+
+/* ALERTS STYLES */
+
+.alert-definition {
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+  display: block;
+  border: 2pt solid #84A98C;
+  background-color: #fff;
+}
+
+.alert-definition .alert-icon {
+  height: 32px;
+  width: 32px;
+  background-color: #FFF;
+  margin-top: -45px;
+  margin-left: -25px;
+}
+
+.alert-definition .alert-name {
+  background-color: #FFF;
+  display: block;
+  text-align: center;
+  width: 140px;
+  height: 30px;
+  color: #84A98C;
+  font-weight: bold;
+  margin-top: -50px;
+  margin-left: 2px;
+}
+
+/*<div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>*/
+
+.alert-definition em, .alert-definition strong {
+  color: #84A98C;
+}
+
+.alert-remark {
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+  display: block;
+  border: 2pt solid #6D98DD;
+  background-color: #fff;
+}
+
+.alert-remark .alert-icon {
+  height: 42px;
+  width: 40px;
+  background-color: #FFF;
+  margin-top: -49px;
+  margin-left: -27px;
+}
+
+.alert-remark em, .alert-remark strong {
+  color: #6D98DD;
+}
+
+.alert-remark .alert-name {
+  background-color: #FFF;
+  display: block;
+  text-align: center;
+  width: 120px;
+  height: 30px;
+  color: #6D98DD;
+  font-weight: bold;
+  margin-top: -50px;
+  margin-left: 10px;
+}
+
+.alert-warning {
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+  display: block;
+  border: 2pt solid #DA7265;
+  background-color: #fff;
+  color: #000;
+}
+
+.alert-warning .alert-icon {
+  height: 35px;
+  width: 39px;
+  background-color: #FFF;
+  margin-top: -50px;
+  margin-left: -25px;
+}
+
+.alert-warning em, .alert-warning strong {
+  color: #DA7265;
+}
+
+.alert-warning .alert-name {
+  background-color: #FFF;
+  display: block;
+  text-align: center;
+  width: 130px;
+  height: 30px;
+  color: #DA7265;
+  font-weight: bold;
+  margin-top: -50px;
+  margin-left: 2px;
+}
+
+/* theorem, lemma */
+
+.alert-theorem, .alert-lemma {
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+  display: block;
+  border: 2pt solid #88527F;
+  background-color: #fff;
+  color: #000;
+}
+
+.alert-theorem .alert-icon {
+  height: 38px;
+  width: 39px;
+  background-color: #FFF;
+  margin-top: -50px;
+  margin-left: -25px;
+}
+
+.alert-lemma .alert-icon {
+  height: 32px;
+  width: 38px;
+  background-color: #FFF;
+  margin-top: -55px;
+  margin-left: -25px;
+}
+
+.alert-theorem em, .alert-theorem strong, 
+.alert-lemma em, .alert-lemma strong {
+  color: #88527F;
+}
+
+.alert-theorem .alert-name {
+  background-color: #FFF;
+  display: block;
+  text-align: center;
+  width: fit-content;
+  height: 30px;
+  color: #88527F;
+  font-weight: bold;
+  margin-top: -50px;
+  margin-left: 2px;
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+.alert-lemma .alert-name {
+  background-color: #FFF;
+  display: block;
+  text-align: center;
+  width: fit-content;
+  height: 30px;
+  color: #88527F;
+  font-weight: bold;
+  margin-top: -50px;
+  margin-left: 2px;
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+.alert-lemma .btn {
+  border: none;
+  background-color: transparent;
+  color: #CBA9C6;
+  margin-left: -1.5%;
+  margin-top: 1%;
+}
+
+.alert-lemma .btn[aria-expanded="true"] {
+  border: none;
+  background-color: transparent;
+  color: #88527F;
+  font-weight: bold;
+  margin-left: -1.5%;
+  margin-top: 1%;
+}
+
+
+.alert-lemma .btn::before {
+  content: "";
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background-image: url("/assets/images/icons/play-button.png");
+  filter: opacity(55%) brightness(1.2);
+  background-size: 18px, auto;
+  float: left; 
+  margin-right: 7px; 
+  margin-top: 2px;
+  transition: 0.34s;
+}
+
+.alert-lemma  .btn[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+  filter: none;
+}
+
+.alert-lemma .qed {
+  margin-top: -10px;
+}
+
+.alert-lemma .qed::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px;
+  background-color: #88527F;
+  color: #88527F;
+  margin-top: -35px;
+  margin-left: 100%;
+}
+
+/* task  */
+
+.alert-task {
+  display: block;
+  border: 2pt solid #D8C577;
+  background-color: #fff;
+  color: #000;
+/*  padding-top: 1rem;
+  padding-bottom: 1rem;*/
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+}
+
+.alert-task .alert-icon {
+  height: 43px;
+  width: 40px;
+  background-color: #FFF;
+  margin-top: -55px;
+  margin-left: -25px;
+}
+
+.alert-task em, .alert-task strong {
+  color: #D8C577;
+}
+
+.alert-task .alert-name {
+  background-color: #FFF;
+  display: block;
+  text-align: center;
+  width: 250px;
+  height: 30px;
+  color: #D8C577;
+  font-weight: bold;
+  margin-top: -50px;
+  margin-left: 2px;
+}
+
+.alert-task p:not(:first-of-type):not(.collapse) {
+  margin-top: 2ex;
+}
+
+.alert-task p:first-of-type:not(.collapse) {
+  margin-top: 1ex;
+}
+
+.alert-task > .question-icon {
+  float: left;
+  display: inline-block;
+  margin-right: 1ex;
+  border-radius: 40px;
+  width: 20px;
+  height: 20px;
+  color: #FFF;
+  background-color: #D8C577;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1ex;
+}
+
+.alert-task > .question-icon ~ .question-icon{
+  margin-top: 2ex;
+}
+
+
+.tooltip > .tooltip-inner {
+  background-color: #cbb24d;
+  max-width: 300px !important;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow::before,
+.bs-tooltip-top .arrow::before {
+  border-top-color: #cbb24d;
+}
+
+.alert-task .btn {
+  border: none;
+  background-color: transparent;
+  color: #D8C577;
+  margin-left: -1.5%;
+  margin-top: -3%;
+  filter: opacity(75%) brightness(1.01);
+}
+
+.alert-task .btn[aria-expanded="true"] {
+  border: none;
+  background-color: transparent;
+  color: #D8C577;
+  font-weight: bold;
+  margin-left: -1.5%;
+  margin-top: -1.2%;
+  filter: none;
+}
+
+.alert-task .btn::before {
+  content: "";
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background-image: url("/assets/images/icons/play-button-task.png");
+  background-size: 18px, auto;
+  float: left; 
+  margin-right: 7px; 
+  margin-top: 2px;
+  transition: 0.34s;
+}
+
+.alert-task  .btn[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+  filter: none;
+}
+
+/* PSEUDOCODE */
+
+.pseudo {
+  font-family: 'Fira Code', monospace;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px #000 solid !important;
+  white-space: pre;
+}
+
+.pseudo .card-header {
+  background-color: #84A98C;
+  border-bottom: 0.5px #000 solid !important;
+
+}
+
+.pseudo .card-body {
+  background-color: #CAD2C5;
+}
+
+.pseudo p {
+  margin-top: -7%;
+  margin-bottom: -7%;
+}
+
+}
+
+

@@ -1,0 +1,57 @@
+{% case include.type %}
+  {% when "definition" %}
+    {% assign alert_type = '"alert alert-definition"' %}
+    {% assign icon = 'study.png' %}
+    {% assign word = 'Определение' %}
+  {% when "theorem" %}
+    {% assign alert_type = '"alert alert-theorem"' %}
+    {% assign icon = 'atom.png' %}
+    {% assign word = 'Теорема' %}
+  {% when "lemma" %}
+    {% assign alert_type = '"alert alert-lemma"' %}
+    {% assign icon = 'flask.png' %}
+    {% assign word = 'Лемма' %}
+  {% when "remark" %}
+    {% assign alert_type = '"alert alert-remark"' %}
+    {% assign icon = 'text.png' %}
+    {% assign word = 'Замечание' %}
+  {% when "warning" %}
+    {% assign alert_type = '"alert alert-warning"' %}
+    {% assign icon = 'fire.png' %}
+    {% assign word = 'Внимание' %}
+  {% else %}
+    {% assign alert_type = '"alert alert-remark"' %}
+    {% assign icon = 'text3.png' %}
+    {% assign word = '' %}
+{% endcase %}
+
+{% if include.name %}
+  {% assign word = word | append: ' (' | append: include.name | append: ')' %}
+{% endif %}
+
+{% if word contains 'Внимание' %}
+  {% assign word = word | append: '!' %}
+{% endif %}
+
+{% if include.custom_icon %}
+  {% assign icon = include.custom_icon | prepend: '"' | append: '"' %}
+{% endif %}
+
+
+<div class={{ alert_type }}>
+  <img class="alert-icon" src= {{ icon | prepend: '"/assets/images/icons/' | append: '"' }} alt="icon"><div class="alert-name">{{ word }}</div>
+
+  {{ include.text | markdownify | remove: '<p>' | remove: '</p>' }}
+  {% if include.label %} <a name={{ include.label | prepend: '"' | append: '"' }}></a> {% endif %}
+  <br>
+  {% if include.proof %}
+    <button class="btn" type="button" data-toggle="collapse" data-target={{ include.label | append: '"' | prepend: '"#collapseProof' }} aria-expanded="false" aria-controls={{ include.label | append: '"' | prepend: '"collapseProof' }}>Доказательство
+  </button>
+  <div class="collapse" id={{ include.label | append: '"' | prepend: '"collapseProof' }}>
+    <div class="qed">
+    <hr>
+      {{ include.proof | markdownify  }}
+    </div>
+  </div>
+  {% endif %}
+</div>

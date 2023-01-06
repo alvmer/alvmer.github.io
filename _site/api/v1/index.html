@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--    -->
+
+  <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#52796f">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#52796F">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+
+  <meta name="description" content="Programmatically access Markdown documentation.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4000/api/v1/">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="Programmatically access Markdown documentation.">
+<!--   <meta property="og:image" content="https://www.markdownguide.org/assets/images/markdown-guide-og.jpg" /> -->
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/font_faces.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap-toc.min.css">
+  <link rel="stylesheet" href="/assets/css/docsearch.min.css">
+
+
+  
+  <link href="/assets/css/page.css" rel="stylesheet">
+  
+
+  <link rel="canonical" href="http://localhost:4000/api/v1/">
+
+  <script src="/assets/javascript/jquery-3.5.1.slim.min.js"></script>
+  <script async src="/assets/javascript/bootstrap.bundle.min.js"></script>
+  <script async src="/assets/javascript/bootstrap-toc.min.js"></script>
+  <script defer src="/assets/javascript/solid.min.js"></script>
+  <!-- <script defer src="/assets/javascript/fontawesome.min.js"></script> -->
+  <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/25675da278.js" crossorigin="anonymous"></script>
+
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+  <style>
+    .MathJax, .MathJax_Display  {
+      /*text-align: center !important;*/
+      font-size:  19px !important;
+    }
+  </style>
+</head>
+
+  <body data-spy="scroll" data-target="#toc">
+    <nav class="navbar navbar-expand-lg navbar-dark mdg-nav">
+  <div class="container">
+    <a class="navbar-brand" href="/" style="margin-top: 0px; margin-bottom: 0px">
+      <img src="/assets/images/amlogo-white.svg" height="37" width="37" class="d-inline-block align-top" alt="Alexey Merzlyakov" style="padding-right: 5px">
+        ? | Алексей Мерзляков 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-top: 2px">
+      
+      <div class="navbar-nav">
+        <!-- <a class="nav-item nav-link " href="/cv/">CV</a> -->
+        <a class="nav-item nav-link " href="/index/#courses">Курсы</a>
+       <!--  <a class="nav-item nav-link " href="/blog/">Блог</a>
+        <a class="nav-item nav-link " href="/talks/">Выступления</a>
+        <a class="nav-item nav-link " href="/books/">Книги</a> -->
+      </div>
+      
+    </div>
+   <!--  <form class="form-inline d-none d-lg-inline-block mt-2 mt-md-0">
+      <input type="text" class="form-control" id="search-input" placeholder="Search" style="margin-top:0">
+    </form> -->
+  </div>
+</nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="no-anchor" data-toc-skip>API</h1>
+        <p>Programmatically access Markdown documentation.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-12 col-md-9">
+          <h2 id="introduction">Introduction</h2>
+
+<p>The Markdown Guide API provides a subset of documentation from the <em>Markdown Guide</em> in JSON format. We hope that software developers and organizations use this API to programmatically consume our documentation and display it in applications and on websites.</p>
+
+<h3 id="why">Why?</h3>
+
+<p>Why create an API for Markdown documentation? Because there’s so much duplicated Markdown documentation on the web! It seems like everybody has their own version of Markdown documentation for their application or website. That’s a shame since most of it is exactly the same.</p>
+
+<p>Then came the epiphany. 💡 We realized we could create a JSON API using documentation from the <em>Markdown Guide</em>. That way, software developers could start using the API to include our documentation in their applications, and organizations like universities and libraries could use the API to include our documentation on their websites.</p>
+
+<p>We’d love to see the <em>Markdown Guide</em> become the central documentation repository for the thousands of Markdown instructions sprinkled around the internet. Will it work? Who knows! One thing’s for sure though: We can’t wait to see what you do with it. 🤘</p>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>The Markdown Guide API is designed to provide only essential Markdown documentation. As a result, the API doesn’t include all of the documentation available on the <em>Markdown Guide</em> website. For example, the <a href="/basic-syntax/#adding-elements-in-lists">Adding Elements in Lists</a> section is not available through the basic syntax endpoint.</p>
+
+<h2 id="basic-syntax-endpoint">Basic Syntax Endpoint</h2>
+
+<p>The basic syntax endpoint contains documentation about the Markdown elements outlined in John Gruber’s design document and described on the <a href="/basic-syntax/">Basic Syntax page</a>.</p>
+
+<div class="card">
+  <h6 class="card-header no-anchor" data-toc-skip="">API Endpoint</h6>
+  <div class="card-body"><a href="/api/v1/basic-syntax.json">/api/v1/basic-syntax.json</a></div>
+</div>
+
+<h3 id="request">Request</h3>
+
+<p><code class="language-plaintext highlighter-rouge">curl https://www.markdownguide.org/api/v1/basic-syntax.json</code></p>
+
+<h3 id="response">Response</h3>
+
+<script src="https://gist.github.com/mattcone/a0103c47bdac8bf81a54b29f650e5cb2.js"></script>
+
+<h2 id="cheat-sheet-endpoint">Cheat Sheet Endpoint</h2>
+
+<p>The cheat sheet endpoint provides an overview of the most popular basic and extended Markdown syntax elements, as described on the <a href="/cheat-sheet/">Cheat Sheet page</a>.</p>
+
+<div class="card">
+  <h6 class="card-header no-anchor" data-toc-skip="">API Endpoint</h6>
+  <div class="card-body"><a href="/api/v1/cheat-sheet.json">/api/v1/cheat-sheet.json</a></div>
+</div>
+
+<h3 id="request-1">Request</h3>
+
+<p><code class="language-plaintext highlighter-rouge">curl https://www.markdownguide.org/api/v1/cheat-sheet.json</code></p>
+
+<h3 id="response-1">Response</h3>
+
+<script src="https://gist.github.com/mattcone/ec8057127a0ff2e0b45d2cde14355b2a.js"></script>
+
+<h2 id="changelog">Changelog</h2>
+
+<p>Here’s a list of all the changes we’ve made to the Markdown Guide API.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018-10-18
+- Updated cheat sheet endpoint to include information about definition lists
+
+2018-07-12
+- Updated links description to include information about adding titles
+
+2017-11-10
+- Added cheat sheet endpoint
+
+2017-11-04
+- Added section about escaping backticks in code
+
+2017-10-24
+- Released API v1
+- Published docs
+</code></pre></div></div>
+
+        </div>
+        <div class="col-md-3 d-none d-md-block" id="sidebar">
+          <nav id="toc" data-toggle="toc" class="sticky-top" style="z-index:1"></nav>
+          
+        </div>
+      </div>
+    </div>
+    <footer class="site-footer">
+  <div class="container">
+    <!-- <p style="font-size: 14px; font-weight: 600"><a href="/about/">About</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://github.com/mattcone/markdown-guide">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/api/v1/">API</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/privacy-policy/">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/terms-and-conditions/">Terms and Conditions</a></p>
+    <p style="margin-top: 15px; font-size: 14px;">&#169; 2023. A <a href="https://www.mattcone.com">Alexey Merzlyakov</a> project. <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Made with 🌶️ in <a href="https://www.newmexico.org/">New Mexico</a>.</p> -->
+  </div>
+</footer>
+<script type="text/javascript" src="/assets/javascript/anchor.min.js"></script>
+<script>
+  anchors.options = {
+  placement: 'right',
+  };
+  anchors.add('h1, h2, h3, h4, h5').remove('.no-anchor');
+</script>
+
+<!-- for search -->
+<script src="/assets/javascript/docsearch.min.js"></script>
+<script>
+docsearch({
+container: '#docsearch',
+appId: 'G2ZRR9A979',
+apiKey: 'f522befe6142f2279344e025a79539a7',
+indexName: 'markdownguide',
+inputSelector: '#search-input',
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+  </body>
+</html>
