@@ -1,15 +1,15 @@
 title: Алексей Мерзляков
 description: Личный сайт Алексея Мерзлякова.
-url: "" # site url
-baseurl: "alvmer.github.io" # apply repo name if use it under gh-pages branch
+url: "https://alvmer.github.io" # site url
+baseurl: "" # apply repo name if use it under gh-pages branch
 
 repo: https://github.com/alvmer/alvmer.github.io
 comments: false
 
-plugins:
-  - jekyll-last-modified-at
-  - jekyll-sitemap
-  - jekyll-spaceship
+# plugins:
+#   - jekyll-last-modified-at
+#   - jekyll-sitemap
+#   - jekyll-spaceship
 
 assets:
    sources:
