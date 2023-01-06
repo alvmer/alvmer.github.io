@@ -1,8 +1,9 @@
-title: "Алексей Мерзляков"
+title: Алексей Мерзляков
+description: Личный сайт Алексея Мерзлякова.
 url: "" # site url
-baseurl: "" # apply repo name if use it under gh-pages branch
+baseurl: "alvmer.github.io" # apply repo name if use it under gh-pages branch
 
-# repo: https://github.com/mattcone/markdown-guide
+repo: https://github.com/alvmer/alvmer.github.io
 comments: false
 
 plugins:
