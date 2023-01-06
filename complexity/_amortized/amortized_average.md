@@ -21,9 +21,11 @@
 <div class="alert alert-definition">
   <img class="alert-icon" src="/assets/images/icons/study.png" alt="icon"><div class="alert-name">Определение</div>
 Пусть над некоторой структурой \(\mathcal{D}\) совершили цепочку из \(m\) операций \(a_i\). Пусть временная сложность в худшем случае каждой операции \(a_i\) составила \(c_i\). Тогда <em>средняя сложность по цепочке</em> вычисляется как 
+
 \[
 c_{\text{avg}} = \dfrac{\displaystyle\sum_{i=1}^m c_i}{m}.
 \]
+
 <a name="def-average-complexity"></a>
 </div>
 
